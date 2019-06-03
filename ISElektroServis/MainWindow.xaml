@@ -1,0 +1,150 @@
+﻿<Window x:Class="ISElektroServis.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ISElektroServis"
+        mc:Ignorable="d"
+        Title="IS Elekro Servis" Height="550" Width="850"
+
+        WindowStartupLocation="CenterScreen"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal" 
+        TextOptions.TextRenderingMode="Auto"        
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="497*"/>
+        </Grid.RowDefinitions>
+
+
+        <Menu IsMainMenu="True" Grid.Column="0" >
+            <MenuItem Header="_Prijem">
+                <MenuItem x:Name="Menu_Home" Header="_U izradi" Click="Menu_Home_Click">
+                    <MenuItem.Icon>
+                        <materialDesign:PackIcon
+                            Kind="Hammer" />
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="_Popravka">
+                <MenuItem Header="_U izradi" Click="Menu_Home_Click">
+                    <MenuItem.Icon>
+                        <materialDesign:PackIcon
+                            Kind="Hammer" />
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="_Finasije">
+                <MenuItem Header="_Fakture">
+                    <MenuItem.Icon>
+                        <materialDesign:PackIcon
+                            Kind="Table" />
+                    </MenuItem.Icon>
+                    <MenuItem x:Name="Menu_Faktura_Izrada" Header="_Izrada" InputGestureText="Ctrl+F" Click="Menu_Faktura_Izrada_Click">
+                        <MenuItem.Icon>
+                            <materialDesign:PackIcon
+                            Kind="Add" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem x:Name="Menu_Lista_faktura" Header="_Lista faktura" InputGestureText="Ctrl+Shift+F" Click="Menu_Lista_faktura_Click">
+                        <MenuItem.Icon>
+                            <materialDesign:PackIcon
+                            Kind="Table" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                </MenuItem>
+
+                <MenuItem Header="_Klijenti">
+                    <MenuItem.Icon>
+                        <materialDesign:PackIcon
+                            Kind="People" />
+                    </MenuItem.Icon>
+                    <MenuItem x:Name="Menu_Dodaj_klijenta" Header="_Dodaj klijenta" InputGestureText="Ctrl+K" Click="Menu_Dodaj_klijenta_Click">
+                        <MenuItem.Icon>
+                            <materialDesign:PackIcon
+                            Kind="Add" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem x:Name="Menu_Lista_klijenta" Header="_Lista klijenata" InputGestureText="Ctrl+Shift+K" Click="Menu_Lista_klijenta_Click">
+                        <MenuItem.Icon>
+                            <materialDesign:PackIcon
+                            Kind="Table" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem x:Name="Menu_Provera_dugovanja" Header="_Provera dugovanja" InputGestureText="Ctrl+D" Click="Menu_Provera_dugovanja_Click">
+                        <MenuItem.Icon>
+                            <materialDesign:PackIcon
+                            Kind="Help" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                </MenuItem>
+
+                <MenuItem x:Name="Menu_Uplata" Header="_Uplata" InputGestureText="Ctrl+U" Click="Menu_Uplata_Click">
+                    <MenuItem.Icon>
+                        <materialDesign:PackIcon
+                            Kind="HomeCurrencyUsd" />
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="_Nabavka">
+                <MenuItem Header="_U izradi" Click="Menu_Home_Click">
+                    <MenuItem.Icon>
+                        <materialDesign:PackIcon
+                            Kind="Hammer" />
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+
+
+            <MenuItem x:Name="Menu_Pomoc" Header="_Pomoć">
+                <MenuItem Header="_Prozor" >
+                    <MenuItem.Icon>
+                        <materialDesign:PackIcon
+                            Kind="WindowMaximize" />
+                    </MenuItem.Icon>
+                    <MenuItem Header="_Svetla tema"  x:Name="MenuSvetlaTema" Click="MenuSvetlaTema_Click">
+                        <MenuItem.Icon>
+                            <materialDesign:PackIcon
+                            Kind="CircleOutline" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+
+                    <MenuItem x:Name="MenuTamnaTema" Header="_Tamna tema" Click="MenuTamnaTema_Click" >
+                        <MenuItem.Icon>
+                            <materialDesign:PackIcon
+                            Kind="CircleSlice8" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="_Paleta boja">
+                        <MenuItem Header="_Plava">
+
+                        </MenuItem>
+                    </MenuItem>
+                </MenuItem>
+                <MenuItem Header="_O softveru" Click="Menu_Pomoc_Click">
+                    <MenuItem.Icon>
+                        <materialDesign:PackIcon
+                            Kind="About" />
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem x:Name="Menu_Izlaz" Header="_Izlaz" HorizontalAlignment="Right" Click="Menu_Izlaz_Click" />
+        </Menu>
+
+        <Image x:Name="SlikaLogo" Grid.Row="1" Source="resursi/logo.png" />
+
+        <local:ListaFaktura x:Name="ListaFaktura" Grid.Row="1" Visibility="Hidden"/>
+        <local:ListaKlijenta x:Name="ListaKlijenta" Grid.Row="1" Visibility="Hidden"/>
+
+
+
+
+
+    </Grid>
+</Window>

@@ -1,0 +1,39 @@
+﻿<Window x:Class="ISElektroServis.ProveraDugovanja"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ISElektroServis"
+        mc:Ignorable="d"
+        Title="Provera dugovanja" Height="300" Width="500"
+
+        WindowStartupLocation="CenterScreen"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal" 
+        TextOptions.TextRenderingMode="Auto"        
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250*"/>
+            <ColumnDefinition Width="250*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="108*"/>
+            <RowDefinition Height="90"/>
+        </Grid.RowDefinitions>
+
+        <Button x:Name="proveriDugme" Grid.Row="1" Grid.Column="1" Style="{StaticResource MaterialDesignRaisedAccentButton}" Width="100" ToolTip="Resource name: MaterialDesignRaisedAccentButton" Click="ProveriDugme_Click">
+            PROVERI
+        </Button>
+        <Button x:Name="otkaziDugme" Grid.Row="1" Grid.Column="0" Style="{StaticResource MaterialDesignRaisedButton}" Width="100" ToolTip="Resource name: MaterialDesignRaisedAccentButton" Click="OtkaziDugme_Click">
+            OTKAŽI
+        </Button>
+
+        <local:UpitProveraDugovanja x:Name="upitProveraDugovanja" Visibility="Visible" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"/>
+        <local:OdgovorProveraDugovanja x:Name="odgovorProveraDugovanja" Visibility="Hidden" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"/>
+    </Grid>
+</Window>
